@@ -1,7 +1,7 @@
 import { MixedChart } from "../../entities/chart/MixedChart";
 
 import { useState } from "react";
-import { data as testData } from '../../shared/data/testData'
+import { data as testData } from '../../shared/data/testData'; // Заменить импорт для использования сторонних данных
 
 import SeriesEditor from "../../widgets/SeriesEditor/SeriesEditor";
 import ChartEditor from "../../widgets/ChartEditor/ChartEditor";
