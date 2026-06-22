@@ -1,0 +1,34 @@
+.series-editor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.series-editor__row {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px 120px;
+  gap: 10px;
+  align-items: end;
+
+  padding: 10px;
+  border: 3px solid #d4c7c8;
+  /* border-radius: 8px; */
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.series-key {
+  font-size: 14px;
+  opacity: 0.9;
+  padding: 6px 0;
+}

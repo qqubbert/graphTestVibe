@@ -1,14 +1,11 @@
-import { useState } from 'react'
 import './App.css'
-import { MixedChart } from '../entities/chart/ui/MixedChart'
-import { data } from '../shared/data/testData'
+
+import Dashboard from '../pages/Dashboard/Dashboard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <MixedChart data={data} />
+      <Dashboard/>
     </>
   )
 }

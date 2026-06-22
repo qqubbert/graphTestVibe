@@ -1,0 +1,43 @@
+.chart-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.chart-editor__table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-editor__row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) auto;
+  gap: 10px;
+  align-items: end;
+  padding: 10px;
+  border: 3px solid #d4c7c8;
+  /* border-radius: 8px; */
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & label {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  & .add-btn {
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  & .delete-btn {
+    height: 32px;
+  }
+}

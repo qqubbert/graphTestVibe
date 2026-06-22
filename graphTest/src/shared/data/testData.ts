@@ -1,8 +1,7 @@
 export const data = [
-  { date: "01.06.2026", area: 120, spline: 200, line: 180, bar: 16.0 },
-  { date: "02.06.2026", area: 140, spline: 220, line: 190, bar: 71.0 },
-  { date: "03.06.2026", area: 180, spline: 250, line: 210, bar: 2.0 },
-  { date: "04.06.2026", area: 170, spline: 240, line: 205, bar: 90.5 },
-  { date: "04.06.2026", area: 170, spline: 240, line: 205, bar: 9.5 },
-  { date: "01.06.2026", area: 120, spline: 200, line: 180, bar: 16.0 },
+  { date: "2026-06-01", area: 2.62, spline: 20.5, line: 8, bar: 5.0 },
+  { date: "2026-06-02", area: 14.2, spline: 12.2, line: 19, bar: 1.0 },
+  { date: "2026-06-03", area: 18.6, spline: 5.55, line: 12, bar: 2.0 },
+  { date: "2026-06-04", area: 6.25, spline: 14.3, line: 20, bar: 0.5 },
+  { date: "2026-06-05", area: 19.25, spline: 15.3, line: 14, bar: 0.75 },
 ];
