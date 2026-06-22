@@ -10,13 +10,6 @@
 - Vite
 - Recharts
 - Framer Motion
-  
-## Features
-- Mixed chart (Area / Line / Bar)
-- Live editing data rows (spreadsheet-like editor)
-- Editable series config (name + colors)
-- Real-time chart update
-- Test dataset support
 
 ## Запуск приложения
 ### 1. Установка библиотек
