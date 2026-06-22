@@ -1,4 +1,19 @@
-export const ChartTooltip = ({ active, payload, label }: Props) => {
+type ChartTooltipItem = {
+  name?: string;
+  value?: number | string;
+  dataKey?: string;
+  color?: string;
+  stroke?: string;
+  fill?: string;
+};
+
+type ChartTooltipProps = {
+  active?: boolean;
+  payload?: ChartTooltipItem[];
+  label?: string | number;
+};
+
+export const ChartTooltip = ({ active, payload, label }: ChartTooltipProps) => {
   if (!active || !payload?.length) return null;
 
   return (
@@ -15,16 +30,14 @@ export const ChartTooltip = ({ active, payload, label }: Props) => {
         gap: "4px",
       }}
     >
-      <div style={{ fontWeight: 200 }}>
-        {label}
-      </div>
+      <div style={{ fontWeight: 200 }}>{label}</div>
 
-      {payload.map((item) => {
+      {payload.map((item, index) => {
         const color = item.color || item.stroke || item.fill;
 
         return (
           <div
-            key={item.dataKey}
+            key={item.dataKey ?? index}
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -46,9 +59,7 @@ export const ChartTooltip = ({ active, payload, label }: Props) => {
               <span>{item.name}:</span>
             </div>
 
-            <span style={{
-              fontWeight: 800
-            }}>{item.value}</span>
+            <span style={{ fontWeight: 800 }}>{item.value}</span>
           </div>
         );
       })}

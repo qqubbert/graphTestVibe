@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ChartRow } from "../../shared/types/types";
 import "./ChartEditor.css";
 
@@ -9,11 +8,13 @@ function ChartEditor({
   data: ChartRow[];
   setData: React.Dispatch<React.SetStateAction<ChartRow[]>>;
 }) {
-  const updateRow = (index: number, key: keyof ChartRow, value: any) => {
+  const updateRow = <K extends keyof ChartRow>(
+    index: number,
+    key: K,
+    value: ChartRow[K],
+  ) => {
     setData((prev) =>
-      prev.map((row, i) =>
-        i === index ? { ...row, [key]: value } : row
-      )
+      prev.map((row, i) => (i === index ? { ...row, [key]: value } : row)),
     );
   };
 
@@ -44,9 +45,7 @@ function ChartEditor({
               <input
                 type="date"
                 value={row.date}
-                onChange={(e) =>
-                  updateRow(index, "date", e.target.value)
-                }
+                onChange={(e) => updateRow(index, "date", e.target.value)}
               />
             </div>
 
@@ -55,9 +54,7 @@ function ChartEditor({
               <input
                 type="number"
                 value={row.area}
-                onChange={(e) =>
-                  updateRow(index, "area", +e.target.value)
-                }
+                onChange={(e) => updateRow(index, "area", +e.target.value)}
               />
             </div>
 
@@ -66,9 +63,7 @@ function ChartEditor({
               <input
                 type="number"
                 value={row.spline}
-                onChange={(e) =>
-                  updateRow(index, "spline", +e.target.value)
-                }
+                onChange={(e) => updateRow(index, "spline", +e.target.value)}
               />
             </div>
 
@@ -77,9 +72,7 @@ function ChartEditor({
               <input
                 type="number"
                 value={row.line}
-                onChange={(e) =>
-                  updateRow(index, "line", +e.target.value)
-                }
+                onChange={(e) => updateRow(index, "line", +e.target.value)}
               />
             </div>
 
@@ -88,16 +81,11 @@ function ChartEditor({
               <input
                 type="number"
                 value={row.bar}
-                onChange={(e) =>
-                  updateRow(index, "bar", +e.target.value)
-                }
+                onChange={(e) => updateRow(index, "bar", +e.target.value)}
               />
             </div>
 
-            <button
-              className="delete-btn"
-              onClick={() => deleteRow(index)}
-            >
+            <button className="delete-btn" onClick={() => deleteRow(index)}>
               Delete
             </button>
           </div>

@@ -19,3 +19,12 @@ export type ChartSeriesState = Record<SeriesKey, SeriesConfig>;
 export type ChartRow = {
   date: string;
 } & Record<SeriesKey, number>;
+
+export type ChartTooltipItem = {
+  name?: string;
+  value?: number | string;
+  dataKey?: string;
+  color?: string;
+  stroke?: string;
+  fill?: string;
+};

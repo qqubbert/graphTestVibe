@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const DiamondDot = (props: any) => {
   const { cx, cy, fill, stroke } = props;
